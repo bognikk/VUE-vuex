@@ -25,8 +25,16 @@ export default {
 			// this.$store.state.counter = this.$store.state.counter + 11;
 			// this.$store.commit('increment');
 			// this.$store.commit('increase', { value: 10 });
-			this.$store.commit({
-				type: 'increase',
+
+			// form mutation
+			// this.$store.commit({
+			// 	type: 'increase',
+			// 	value: 10,
+			// });
+
+			// form actions below
+			this.$store.dispatch({
+				type: 'increaseAction',
 				value: 10,
 			});
 		},

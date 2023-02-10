@@ -9,11 +9,26 @@ const store = createStore({
       counter: 0,
     };
   },
+  actions: {
+    //it is a good practice to always call actions before mutations
+    incrementAction(context) {
+      setTimeout(function () {
+        context.commit('incrementMutation');
+      }, 2000);
+    },
+    increaseAction(context, payload) {
+      setTimeout(function () {
+        context.commit('increaseMutation', payload);
+      }, 2000);
+    },
+  },
   mutations: {
-    increment(state) {
+    //mutations must be synchronous
+    // always manipulate state from mutations and not from actions
+    incrementMutation(state) {
       state.counter = state.counter + 2;
     },
-    increase(state, payload) {
+    increaseMutation(state, payload) {
       state.counter = state.counter + payload.value;
     },
   },

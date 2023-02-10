@@ -7,7 +7,9 @@ export default {
 	methods: {
 		addOne() {
 			// this.$store.state.counter = this.$store.state.counter + 1;
-			this.$store.commit('increment');
+			// this.$store.commit('incrementMutation');
+
+			this.$store.dispatch('incrementAction');
 		},
 	},
 };
