@@ -44,7 +44,7 @@ export default {
 
 			// form actions below
 			this.$store.dispatch({
-				type: 'increaseAction',
+				type: 'numbers/increaseAction',
 				value: 10,
 			});
 		},
